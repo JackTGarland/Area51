@@ -3,11 +3,8 @@ import os
 import random
 directory = os.listdir()
 
-for entry in directory:  
-    if entry == 'var.ini':
-        found = True
-        print(entry)
-if found == False:
+#Create var.ini if not found in directory
+if 'var.ini' not in os.listdir():
     print("No config found, creating config.")
     config = configparser.ConfigParser()
     config['people'] = {'civilians': '150',
@@ -33,6 +30,7 @@ print("storming Area-51")
 print("civilian hit rate set to :" + config['people']['civilianHitRate'])
 print("milatery hit rate set to :" + config['people']['troopHitRate'])
 
+# We are just saving some information from the config into variables as we manipulate them later.
 civPop = int(config['people']['civilians'])
 milPop = int(config['people']['troops'])
 civHitRate = int(config['people']['civilianHitRate'])
@@ -40,6 +38,7 @@ milHitRate = int(config['people']['troopHitRate'])
 milKilled = 0
 totalRounds = 0
 
+#Fight function, this will but what determins who win's a battles and who losses.
 def fight(milPop):
     round = 0
     global civPop
@@ -72,8 +71,10 @@ def fight(milPop):
         print(civStartPop - civPop, " Civilans were killed that floor.")
         return 'win'
 
+#First call of fight, 
 result = fight(milPop)
 
+#Only if the civialans have won the first fight will it generate the rest of the base, no point running code that will never be used.
 if result == 'win':
     numberOfFloors = random.randrange(int(config['base']['floorMinimum']),int(config['base']['floorMaximum'])+1)
     currentFloor = 1

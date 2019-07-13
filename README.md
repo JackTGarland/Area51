@@ -1,4 +1,4 @@
-[h1] Storm Area-51 [/h1]
+# Storm Area-51
 
 Created from the meme about rushing area 51.
 

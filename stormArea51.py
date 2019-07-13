@@ -19,7 +19,7 @@ if found == False:
         'floorMaximum': '90',
         'aliensSpawn': '15',
         'doorTime': '15',
-        'reinforments': '60'
+        'reinforcements': '60'
     }
     config['aliens'] = {'alignment': 'good'}
 
@@ -31,7 +31,7 @@ config.read('var.ini')
 
 print("storming Area-51")
 print("civilian hit rate set to :" + config['people']['civilianHitRate'])
-print("milatery hit rate set to :" + config['people']['troopHitRate'])
+print("military hit rate set to :" + config['people']['troopHitRate'])
 
 civPop = int(config['people']['civilians'])
 milPop = int(config['people']['troops'])
@@ -62,7 +62,7 @@ def fight(milPop):
         print("After a long battle the civilans have lost.")
         print("the fight Lasted ", round, " rounds.")
         milKilled = milKilled + milStartPop - milPop
-        print(milStartPop - milPop, " Milatery personal were killed that floor.")
+        print(milStartPop - milPop, " Military personal were killed that floor.")
         return 'loss'
     else:
         print("Civilans have won the fight.")
@@ -95,5 +95,5 @@ if result == 'win':
             currentFloor = currentFloor + 1
         else:
             print("You made it to floor ", currentFloor)
-            print(milKilled, " Milatery personal were killed.")
+            print(milKilled, " Military personal were killed.")
             print(int(config['people']['civilians']), "Civilans were killed.")

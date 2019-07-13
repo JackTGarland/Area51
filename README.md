@@ -6,4 +6,4 @@ var.ini let's you change variables. Some don't do anything right now as I made t
 
 More implmentation to come. stay tuned.
 
-Mostly just a simulator of sorts. There s little to no validation so if it brakes I am sorry, I made this in an hour.
+Mostly just a simulator of sorts. There's little to no validation so if it brakes I am sorry, I made this in an hour.
